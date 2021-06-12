@@ -9,27 +9,28 @@ import java.util.stream.Collectors;
 
 @Component
 public class StockMapper {
+
     public Stock toEntity(StockDTO dto) {
         Stock stock = new Stock();
         stock.setId(dto.getId());
         stock.setName(dto.getName());
+        stock.setDate(dto.getDate());
         stock.setPrice(dto.getPrice());
         stock.setVariation(dto.getVariation());
-        stock.setDate(dto.getDate());
         return stock;
     }
 
-    public StockDTO toDto(Stock stock) {
-        StockDTO dto = new StockDTO();
-        dto.setId(stock.getId());
-        dto.setName(stock.getName());
-        dto.setPrice(stock.getPrice());
-        dto.setVariation(stock.getVariation());
-        dto.setDate(stock.getDate());
-        return dto;
+    public StockDTO toDto(Stock active) {
+        StockDTO stockDTO = new StockDTO();
+        stockDTO.setId(active.getId());
+        stockDTO.setName(active.getName());
+        stockDTO.setDate(active.getDate());
+        stockDTO.setPrice(active.getPrice());
+        stockDTO.setVariation(active.getVariation());
+        return stockDTO;
     }
 
-    public List<StockDTO> toDto(List<Stock> listStock) {
-        return listStock.stream().map(this::toDto).collect(Collectors.toList());
+    public List<StockDTO> toDto(List<Stock> list) {
+        return list.stream().map(this::toDto).collect(Collectors.toList());
     }
 }

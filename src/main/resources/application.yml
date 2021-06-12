@@ -6,14 +6,18 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: postgres://ufolzgzrnwyant:1fee0016b3ee0ccd8fd1c1497f4745ff42be564376b9c695fc6cb021030338e1@ec2-52-5-247-46.compute-1.amazonaws.com:5432/dci8v779lj52vu
-    username: ufolzgzrnwyant
-    password: 1fee0016b3ee0ccd8fd1c1497f4745ff42be564376b9c695fc6cb021030338e1
-jpa:
-  show-sql: true
-  database-platform: org.hibernate.dialect.PostgreSQLDialect
-  generate-ddl: true
-  hibernate:
-    ddl-auto: none
+    #url: jdbc:postgresql://localhost:5432/postgres
+    url: postgres://pesvogdpexfcao:2093eec9faf80060e65a50fdc4459c426b06dbaaadd15f088b4e48906b0ee11f@ec2-23-22-191-232.compute-1.amazonaws.com:5432/d8es2j2epdm0c1
+    #username: postgres
+    username: pesvogdpexfcao
+    #password: 123456
+    password: 2093eec9faf80060e65a50fdc4459c426b06dbaaadd15f088b4e48906b0ee11f
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+
 application:
-  description: Projeto criado para o bootcamp DIO - Santander / Backend
+  description: Projeto criado para o bootcamp DIO - Santander
